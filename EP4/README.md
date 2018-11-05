@@ -1,3 +1,8 @@
+"EP4: Faça um Stopmotion a partir de 30 fotos. 
+Gere os vídeos usando FFMPEG. 
+Entregue o link para um vídeo MPEG1, um vídeo H264 e um parágrafo com suas considerações sobre o exercício."		
+
+######
 FOTOS CAPTURAS: 59 fotos, total de 45,1mb
 
 Propriedades das fotos:
