@@ -2,7 +2,7 @@
 %Autor : Douglas Diniz Landim, ra 76681
 %email : ddlandim@unifesp.br
 
-im = imread('in.pgm');
+im = imread('lenat.pgm');
 [l,a] = size(im);
 b=8; % Bloco (8x8)
 nb=(l/b)*(a/b); % Numero total de blocos
@@ -30,17 +30,17 @@ Q50=[16  11  10  16  24  40  51  61;
       49  64  78  87 103 121 120 101;
       72  92  95  98 112 100 103  99];
 
-Q90=[3  2  2  3  5  8 10 12;
-     2  2  3  4  5 12 12 11;
-     3  3  3  5  8 11 14 11;
-     3  3  4  6 10 17 16 12;
+Q99=[83  2  82  83  5  8 10 12;
+     2  82  83  4  5 12 12 11;
+     83  83  3  5  8 11 14 11;
+     83  3  4  6 10 17 16 12;
      4  4  7 11 14 22 21 15;
      5  7 11 13 16 12 23 18;
      10 13 16 17 21 24 24 21;
      14 18 19 20 22 20 20 20];
  
 %Selecao do gabarito para calculo
-Q = Q90;
+Q = Q99;
 % Matriz M com os valores subtraídos por 128
 M = double(im)-128;
 
@@ -86,15 +86,9 @@ im_out = im;
 kk=0;
 for i=1:(l/b)
     for j=1:(a/b)
-        M( double(b*(i-1)+1:b*(i-1)+b) , double(b*(j-1)+1:b*(j-1)+b) ) = M_J_N(:,:,kk+j);
+        im_out( double(b*(i-1)+1:b*(i-1)+b) , double(b*(j-1)+1:b*(j-1)+b) ) = M_J_N(:,:,kk+j);
     end
 kk=kk+(l/b);
 end
 
-imwrite(im_out,'out_q90.pgm');
-
-
-
-
-
-
+imwrite(im_out,'lenatout_q99.pgm');
